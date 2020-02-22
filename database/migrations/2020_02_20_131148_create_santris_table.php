@@ -14,8 +14,8 @@ class CreateSantrisTable extends Migration
     public function up()
     {
         Schema::create('santri', function (Blueprint $table) {
-            $table->integer('id_santri',9);
-            $table->integer('id_jabatan');
+            $table->increments('id_santri');
+            $table->integer('id_jabatan')->unsigned();
             $table->integer('id_golongansantri');
             $table->integer('id_kelas');
             $table->integer('id_user');
