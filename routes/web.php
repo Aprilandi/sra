@@ -20,7 +20,9 @@ Route::get('/', function(){
 });
 Route::get('/santri', 'PagesController@santri');
 // Route::get('/santri', 'PagesController@santri');
-Auth::routes();
+// Auth::routes();
+
+// Route::get('/login', 'login@show');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

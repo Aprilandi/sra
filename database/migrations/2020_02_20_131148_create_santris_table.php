@@ -13,7 +13,7 @@ class CreateSantrisTable extends Migration
      */
     public function up()
     {
-        Schema::create('santri', function (Blueprint $table) {
+        Schema::create('santris', function (Blueprint $table) {
             $table->increments('id_santri');
             $table->integer('id_jabatan')->unsigned();
             $table->integer('id_golongansantri');

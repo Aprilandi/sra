@@ -37,4 +37,17 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function masuk(Request $request){
+        $data1 = Santri::where('email','=', $request->email)->where('password','=',$request->password)->get();
+        $data2 = User::where('email','=', $request->email)->where('password','=',$request->password)->get();
+
+        if(count($data1)>0){
+            Auth::guard('santri')->LoginUsingId($data1[0]['id_santri']);
+        }elseif(count($data2)>0){
+            Auth::guard('user')->LoginUsingId($data1[0]['id']);
+        }else{
+            return redirect('auth/login')->with(['']);
+        }
+    }
 }
