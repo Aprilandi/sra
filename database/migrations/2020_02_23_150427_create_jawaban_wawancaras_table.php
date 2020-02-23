@@ -15,8 +15,8 @@ class CreateJawabanWawancarasTable extends Migration
     {
         Schema::create('jawaban_wawancaras', function (Blueprint $table) {
             $table->increments('id_jawabanwawancara');
-            $table->integer('id_wawancara',10)->unsigned();
-            $table->integer('id_santri',10)->unsigned();
+            $table->integer('id_wawancara')->unsigned();
+            $table->integer('id_santri')->unsigned();
             $table->text('jawaban_wawancara');
             $table->timestamps();
             $table->softDeletes();

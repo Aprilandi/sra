@@ -15,8 +15,8 @@ class CreateKamarsantrisTable extends Migration
     {
         Schema::create('kamarsantris', function (Blueprint $table) {
             $table->increments('id_kamarsantri');
-            $table->integer('id_santri',10)->unsigned();
-            $table->integer('id_kamar',10)->unsigned();
+            $table->integer('id_santri')->unsigned();
+            $table->integer('id_kamar')->unsigned();
             $table->tinyInteger('is_ketua_kamar');
             $table->date('tgl_masukkamar');
             $table->date('tgl_keluarkamar');
