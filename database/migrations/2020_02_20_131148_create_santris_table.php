@@ -18,7 +18,7 @@ class CreateSantrisTable extends Migration
             $table->integer('id_jabatan')->unsigned();
             $table->integer('id_golongansantri')->unsigned();
             $table->integer('id_kelas');
-            $table->integer('id_user')->unsigned();
+            $table->integer('id')->unsigned();
             $table->char('no_ktp',16);
             $table->string('nama_lengkap',50);
             $table->string('nama_panggilan',10);
@@ -51,8 +51,8 @@ class CreateSantrisTable extends Migration
             ->onUpdate('cascade')
             ->onDelete('restrict');
 
-            $table->foreign('id_user')
-            ->references('id_user')->on('users')
+            $table->foreign('id')
+            ->references('id')->on('users')
             ->onUpdate('cascade')
             ->onDelete('restrict');
         });

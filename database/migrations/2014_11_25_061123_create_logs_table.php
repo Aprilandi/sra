@@ -15,15 +15,15 @@ class CreateLogsTable extends Migration
     {
         Schema::create('logs', function (Blueprint $table) {
             $table->increments('id_log');
-            $table->integer('id_user')->unsigned();
+            $table->integer('id')->unsigned();
             $table->string('log',100);
             $table->string('tgl_log',45);
             $table->timestamps();
             $table->softDeletes();
 
             //foreign key 
-            $table->foreign('id_user')
-            ->references('id_user')->on('users')
+            $table->foreign('id')
+            ->references('id')->on('users')
             ->onUpdate('cascade')
             ->onDelete('restrict');
         });
