@@ -21,11 +21,12 @@ Route::get('/', function(){
 
 Route::get('kamar','PagesController@kamar')->name('kamar');
 
-Route::get('/santri', 'PagesController@santri');
+Route::get('/admin/santri', 'PagesController@santri')->middleware(['role', 'auth']);
 // Route::get('/santri', 'PagesController@santri');
 // Auth::routes();
 
 
+Route::get('/santri', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
