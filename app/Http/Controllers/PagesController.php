@@ -10,7 +10,11 @@ class PagesController extends Controller
         return view('admin/dashboard');
     }
     public function santri() {
-        return view('admin/santri');
+        return view('admin/index');
+    }
+
+    public function kamar(){
+        return view('admin/kamar/index');
     }
 
 }

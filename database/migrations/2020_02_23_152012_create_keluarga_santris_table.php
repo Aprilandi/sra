@@ -21,6 +21,12 @@ class CreateKeluargaSantrisTable extends Migration
             $table->string('pekerjaan_ayah',50);
             $table->timestamps();
             $table->softDeletes();
+
+            //foreign key
+            $table->foreign('id_santri')
+            ->references('id_santri')->on('santris')
+            ->onUpdate('cascade')
+            ->onDelete('restrict');
         });
     }
 

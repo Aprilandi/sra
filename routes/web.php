@@ -18,11 +18,13 @@
 Route::get('/', function(){
     return view('welcome');
 });
+
+Route::get('kamar','PagesController@kamar')->name('kamar');
+
 Route::get('/santri', 'PagesController@santri');
 // Route::get('/santri', 'PagesController@santri');
 // Auth::routes();
 
-// Route::get('/login', 'login@show');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

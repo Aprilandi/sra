@@ -47,16 +47,16 @@ return [
             'hash' => false,
         ],
 
-        'santri' => [
-            'driver' => 'session',
-            'provider' => 'santri',
-        ],
+        // 'santri' => [
+        //     'driver' => 'session',
+        //     'provider' => 'santri',
+        // ],
 
-        'apisantri' => [
-            'driver' => 'token',
-            'provider' => 'santri',
-            'hash' => false,
-        ],
+        // 'apisantri' => [
+        //     'driver' => 'token',
+        //     'provider' => 'santri',
+        //     'hash' => false,
+        // ],
     ],
 
     /*
@@ -82,10 +82,10 @@ return [
             'model' => App\Models\User::class,
         ],
 
-        'santri' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\login_santri::class,
-        ]
+        // 'santri' => [
+        //     'driver' => 'eloquent',
+        //     'model' => App\Models\Santri::class,
+        // ]
 
         // 'users' => [
         //     'driver' => 'database',
@@ -115,6 +115,13 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+
+        // 'santris' => [
+        //     'provider' => 'santris',
+        //     'table' => 'password_resets',
+        //     'expire' => 60,
+        //     'throttle' => 60,
+        // ],
     ],
 
     /*

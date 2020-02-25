@@ -5,32 +5,90 @@
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
                 <li class="sidebar-item">
-                    <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                        <i class="mdi mdi-account-card-details"></i>
-                        <span class="hide-menu">isi sendiri</span>
+                    <a class="sidebar-link has-arrow waves-effect waves-dark profile-dd" href="javascript:void(0)" aria-expanded="false">
+                        <img src="../../assets/images/users/1.jpg" class="rounded-circle ml-2" width="30">
+                        <span class="hide-menu">Steve Jection </span>
                     </a>
-                    <ul aria-expanded="false" class="collapse first-level">
+                    <ul aria-expanded="false" class="collapse  first-level">
                         <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">
-                                <i class="mdi mdi-adjust"></i>
-                                <span class="hide-menu">isi sendiri</span>
+                            <a href="javascript:void(0)" class="sidebar-link">
+                                <i class="ti-user"></i>
+                                <span class="hide-menu"> My Profile </span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="/santri" class="sidebar-link">
-                                <i class="mdi mdi-account-card-details"></i>
-                                <span class="hide-menu"> isi sendiri </span>
+                            <a href="javascript:void(0)" class="sidebar-link">
+                                <i class="ti-wallet"></i>
+                                <span class="hide-menu"> My Balance </span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="javascript:void(0)" class="sidebar-link">
+                                <i class="ti-email"></i>
+                                <span class="hide-menu"> Inbox </span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="javascript:void(0)" class="sidebar-link">
+                                <i class="ti-settings"></i>
+                                <span class="hide-menu"> Account Setting </span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="javascript:void(0)" class="sidebar-link">
+                                <i class="fas fa-power-off"></i>
+                                <span class="hide-menu"> Logout </span>
                             </a>
                         </li>
                     </ul>
                 </li>
+                
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="authentication-login1.html" aria-expanded="false">
+                        <i class="mdi mdi-av-timer"></i>
+                        <span class="hide-menu">Log Out</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                        <i class="mdi mdi-account-card-details"></i>
+                        <span class="hide-menu">Master Santri</span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item">
+                            <a href="{{ route('kamar') }}" class="sidebar-link">
+                                <i class="mdi mdi-adjust"></i>
+                                <span class="hide-menu">Data Kamar</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="index2.html" class="sidebar-link">
+                                <i class="mdi mdi-adjust"></i>
+                                <span class="hide-menu"> Data Santri </span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+               
                 <div class="devider"></div>
-                {{-- <li class="sidebar-item">
+                <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="../../docs/documentation.html" aria-expanded="false">
                         <i class="mdi mdi-adjust text-danger"></i>
-                        <span class="hide-menu">Logout</span>
+                        <span class="hide-menu">Documentation</span>
                     </a>
-                </li> --}}
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="authentication-login1.html" aria-expanded="false">
+                        <i class="mdi mdi-adjust text-info"></i>
+                        <span class="hide-menu">Log Out</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="pages-faq.html" aria-expanded="false">
+                        <i class="mdi mdi-adjust text-success"></i>
+                        <span class="hide-menu">FAQs</span>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

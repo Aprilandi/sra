@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicon.png') }}">
-    <title>KP_SisThaybah</title>
+    <title>SISThaybah</title>
     <!-- chartist CSS -->
     <link href="{{ asset('assets/libs/chartist/dist/chartist.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css') }}" rel="stylesheet">
@@ -50,13 +50,15 @@
         @include('templates.partials._topbar')
         <!-- ============================================================== -->
         <!-- End Topbar header -->
+       
         @include('templates.partials._sidebar')
+
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
         <div class="page-wrapper">
-
+            
             @yield('content')
-
+          
             <footer class="footer text-center">
                 All Rights Reserved by Ample admin. Designed and Developed by
                 <a href="https://wrappixel.com">WrapPixel</a>.
@@ -75,10 +77,12 @@
     <!-- ============================================================== -->
     <!-- customizer Panel -->
     <!-- ============================================================== -->
+    @include('templates.partials._customizer')
     <div class="chat-windows"></div>
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
+  
     @include('templates.partials._scripts')
 
 </html>

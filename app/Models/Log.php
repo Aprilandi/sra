@@ -4,11 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class GolonganSantri extends Model
+class Log extends Model
 {
-    protected $table = 'golongan_santris';
+    protected $table = 'logs';
 
     protected $fillable = [
-        'golongan_santri'
+        'id_user',
+        'log',
+        'tgl_log'
     ];
 }

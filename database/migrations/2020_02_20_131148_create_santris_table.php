@@ -16,9 +16,9 @@ class CreateSantrisTable extends Migration
         Schema::create('santris', function (Blueprint $table) {
             $table->increments('id_santri');
             $table->integer('id_jabatan')->unsigned();
-            $table->integer('id_golongansantri');
+            $table->integer('id_golongansantri')->unsigned();
             $table->integer('id_kelas');
-            $table->integer('id_user');
+            $table->integer('id_user')->unsigned();
             $table->char('no_ktp',16);
             $table->string('nama_lengkap',50);
             $table->string('nama_panggilan',10);
@@ -29,7 +29,7 @@ class CreateSantrisTable extends Migration
             $table->string('alamat_asal',100);
             $table->string('no_hp',15);
             $table->string('email',45);
-            $table->string('password',60);
+            // $table->string('password',60);
             $table->string('nama_kampus',60);
             $table->string('jurusan',45);
             $table->string('strata',15);
@@ -43,6 +43,16 @@ class CreateSantrisTable extends Migration
             //foreign key
             $table->foreign('id_jabatan')
             ->references('id_jabatan')->on('jabatan')
+            ->onUpdate('cascade')
+            ->onDelete('restrict');
+
+            $table->foreign('id_golongansantri')
+            ->references('id_golongansantri')->on('golongan_santris')
+            ->onUpdate('cascade')
+            ->onDelete('restrict');
+
+            $table->foreign('id_user')
+            ->references('id_user')->on('users')
             ->onUpdate('cascade')
             ->onDelete('restrict');
         });

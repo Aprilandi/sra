@@ -16,10 +16,10 @@
                 <!--End Logo icon -->
                 <!-- Logo text -->
                 {{-- <span class="logo-text">
-                <!-- dark Logo text -->
-                <img src="../../assets/images/logos/thaybah-icon.png" alt="homepage" class="dark-logo" />
-                <!-- Light Logo text -->    
-                <img src="../../assets/images/logos/logo-light-text.png" class="light-logo" alt="homepage" />
+                     <!-- dark Logo text -->
+                     <img src="../../assets/images/logos/thaybah-icon.png" alt="homepage" class="dark-logo" />
+                     <!-- Light Logo text -->    
+                     <img src="../../assets/images/logos/logo-light-text.png" class="light-logo" alt="homepage" />
                 </span> --}}
             </a>
             <!-- ============================================================== -->
@@ -38,7 +38,7 @@
             <!-- toggle and nav items -->
             <!-- ============================================================== -->
             <ul class="navbar-nav float-left mr-auto">
-
+               
             </ul>
             <!-- ============================================================== -->
             <!-- Right side toggle and nav items -->
