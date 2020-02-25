@@ -13,4 +13,9 @@ class Log extends Model
         'log',
         'tgl_log'
     ];
+
+    //Relation Log to User
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
 }

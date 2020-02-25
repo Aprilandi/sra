@@ -13,4 +13,9 @@ class Kamar extends Model
         'no_kamar',
         'kapasitas_kamar'
     ];
+
+    //Relation Kamar to Santri
+    public function santri(){
+        return $this->belongsToMany('App\Models\Santri');
+    }
 }

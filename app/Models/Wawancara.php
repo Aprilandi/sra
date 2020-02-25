@@ -11,4 +11,9 @@ class Wawancara extends Model
     protected $fillable = [
         'soal_wawancara'
     ];
+
+    //Relation Wawancara to Santri 
+    public function santri(){
+        return $this->belongsToMany('App\Models\Santri');
+    }
 }

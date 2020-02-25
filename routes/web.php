@@ -19,7 +19,7 @@ Route::get('/', function(){
     return view('welcome');
 });
 
-Route::get('kamar','PagesController@kamar')->name('kamar');
+Route::get('admin/kamar','PagesController@kamar')->middleware(['role', 'auth'])->name('kamar');
 
 Route::get('/admin/santri', 'PagesController@santri')->middleware(['role', 'auth']);
 // Route::get('/santri', 'PagesController@santri');

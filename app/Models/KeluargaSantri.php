@@ -14,4 +14,9 @@ class KeluargaSantri extends Model
         'alamat_ayah',
         'pekerjaan_ayah'
     ];
+
+    //Relation KeluargaSantri to Santri 
+    public function santri(){
+        return $this->belongsTo('App\Models\Santri');
+    }
 }
