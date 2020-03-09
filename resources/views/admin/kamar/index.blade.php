@@ -33,21 +33,28 @@
                                         <thead>
                                             <tr>
                                                 <th>Nomor Kamar</th>
-                                                <th>Nama</th>
+                                                <th>Nama Kamar</th>
+                                                <th>Kapasitas Kamar</th>
+                                                <th>Sisa Kamar</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Abu Bakar</td>
-                                                    <td>Edinburgh</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>Umar</td>
-                                                    <td>Edinburgh</td>
-                                                </tr>
+                                               @foreach($kamar as $row)
+                                                    
+                                                    
+                                                        <tr>
+                                                            <td>{{$row->no_kamar}}</td>
+                                                            <td>{{$row->nama_kamar}}</td>
+                                                            <td>{{$row->kapasitas_kamar}}</td>
+                                                            <td>{{ $row->kapasitas_kamar-$row->KamarSantri()->count()   }}</td>
+                                                            <td>
+                                                                <a href="#"><button class="btn btn-primary">Edit</button></a>
+                                                                <a href="#"><button class="btn btn-danger">Hapus</button></a>
+                                                            </td>
+                                                        </tr>
+                                                    
+                                               @endforeach
                                         </tbody>
                                     </table>
                                 </div>

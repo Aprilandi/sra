@@ -21,7 +21,7 @@ Route::get('/', function(){
 
 Route::get('admin/kamar','PagesController@kamar')->middleware(['role', 'auth'])->name('kamar');
 
-Route::get('/admin/santri', 'PagesController@santri')->middleware(['role', 'auth']);
+Route::get('/admin/santri', 'PagesController@santri')->middleware(['role', 'auth'])->name('santri.index');
 // Route::get('/santri', 'PagesController@santri');
 // Auth::routes();
 

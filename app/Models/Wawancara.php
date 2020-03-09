@@ -8,7 +8,10 @@ class Wawancara extends Model
 {
     protected $table = 'wawancaras';
 
+    protected $primaryKey = 'id_wawancara';
+
     protected $fillable = [
+        'id_wawancara',
         'soal_wawancara'
     ];
 

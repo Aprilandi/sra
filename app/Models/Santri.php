@@ -9,7 +9,10 @@ class Santri extends Model
   
     protected $table = 'santris';
 
+    protected $primaryKey = 'id_santri';
+
     protected $fillable = [
+        'id_santri',
         'id_jabatan',
         'id_golongansantri',
         'id_kelas',

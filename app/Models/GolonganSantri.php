@@ -8,7 +8,10 @@ class GolonganSantri extends Model
 {
     protected $table = 'golongan_santris';
 
+    protected $primaryKey = 'id_golongansantri';
+
     protected $fillable = [
+        'id_golongansantri',
         'golongan_santri'
     ];
 

@@ -8,7 +8,10 @@ class Log extends Model
 {
     protected $table = 'logs';
 
+    protected $primaryKey = 'id_log';
+
     protected $fillable = [
+        'id_log',
         'id_user',
         'log',
         'tgl_log'

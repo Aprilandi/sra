@@ -44,17 +44,20 @@
             <!-- Right side toggle and nav items -->
             <!-- ============================================================== -->
             <ul class="navbar-nav float-right">
+            
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img src="../../assets/images/users/1.jpg" alt="user" class="rounded-circle" width="36">
-                        <span class="ml-2 font-medium">Steve</span><span class="fas fa-angle-down ml-2"></span>
+                        <span class="ml-2 font-medium">{{Auth::user()->username}}</span><span class="fas fa-angle-down ml-2"></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
                         <div class="d-flex no-block align-items-center p-3 mb-2 border-bottom">
                             <div class=""><img src="../../assets/images/users/1.jpg" alt="user" class="rounded" width="80"></div>
                             <div class="ml-2">
-                                <h4 class="mb-0">Steave Jobs</h4>
-                                <p class=" mb-0 text-muted">varun@gmail.com</p>
+                            
+                                <h4 class="mb-0">{{Auth::user()->username}}</h4>
+                            
+                                <p class=" mb-0 text-muted">{{Auth::user()->email}}</p>
                                 <a href="javascript:void(0)" class="btn btn-sm btn-danger text-white mt-2 btn-rounded">View Profile</a>
                             </div>
                         </div>
@@ -74,6 +77,7 @@
                                     </form>
                     </div>
                 </li>
+            
                 <!-- ============================================================== -->
                 <!-- User profile and search -->
                 <!-- ============================================================== -->

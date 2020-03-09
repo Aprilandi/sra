@@ -8,7 +8,10 @@ class KeluargaSantri extends Model
 {
     protected $table = 'keluarga_santris';
 
+    protected $primaryKey = 'id_keluargasantri';
+
     protected $fillable = [
+        'id_keluargasantri',
         'id_santri',
         'nama_ayah',
         'alamat_ayah',
