@@ -1,10 +1,9 @@
 <?php
 
-use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class UserSeeder extends Seeder
+class StatusSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,26 +12,21 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
-            'id_role' => '1',
-            'username' => 'admin',
-            'password' => bcrypt('admin123'),
+        DB::table('status')->insert([
+            'nama_sts' => 'Belum',
+            'keterangan' => 'Laporan Baru, masih belum ditangani',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);
-
-        DB::table('users')->insert([
-            'id_role' => '2',
-            'username' => 'cobaRS',
-            'password' => bcrypt('cobars123'),
+        DB::table('status')->insert([
+            'nama_sts' => 'Masih',
+            'keterangan' => 'Sudah ditangani atau sudah dikirimkan unit dari pihak yang terkait untuk membantu',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);
-
-        DB::table('users')->insert([
-            'id_role' => '3',
-            'username' => 'cobaPL',
-            'password' => bcrypt('cobapl123'),
+        DB::table('status')->insert([
+            'nama_sts' => 'Sudah',
+            'keterangan' => 'Masalah sudah terselesaikan',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);

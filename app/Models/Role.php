@@ -12,11 +12,12 @@ class Role extends Model
 
     protected $fillable = [
         'id_role',
-        'role'
+        'role',
+        'created_at',
+        'update_at'
     ];
 
-    //Relation Role to user
     public function user(){
-        return $this->hasMany('App\Models\User');
+        return $this->hasMany(User::class, 'id_role', 'id_role');
     }
 }

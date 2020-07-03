@@ -15,16 +15,31 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $primaryKey = 'id';
+
+    protected $table = 'users';
+
+    protected $primaryKey = 'id_user';
 
     protected $fillable = [
-        'id',
+        'id_user',
         'id_role',
         'username',
-        'nama', 
-        'email',
         'password',
+        'created_at',
+        'update_at'
     ];
+
+    public function role(){
+        return $this->belongsTo(Role::class, 'id_role', 'id_role');
+    }
+
+    public function kepolisian(){
+        return $this->hasOne(Kepolisian::class, 'id_user', 'id_user');
+    }
+
+    public function rumahSakit(){
+        return $this->hasOne(RumahSakit::class, 'id_user', 'id_user');
+    }
 
     /**
      * The attributes that should be hidden for arrays.
@@ -43,19 +58,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    //Relation User to Role
-    public function role(){
-        return $this->belongsTo('App\Models\Role');
-    }
-
-    //Relation User to Log
-    public function log(){
-        return $this->hasMany('App\Models\Log');
-    }
-
-    //Relation User to Santri
-    public function santri(){
-        return $this->hasOne('App\Models\Santri');
-    }
 }

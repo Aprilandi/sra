@@ -6,8 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
-use Hash;
-use Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 use App\Models\User;
 
@@ -43,43 +43,42 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    // public function masuk(Request $request){
-    //     $data1 = Santri::where('email','=', $request->email)->where('password','=',$request->password)->get();
-    //     $data2 = User::where('email','=', $request->email)->where('password','=',$request->password)->get();
-
-    //     if(count($data1)>0){
-    //         Auth::guard('santri')->LoginUsingId($data1[0]['id_santri']);
-    //     }elseif(count($data2)>0){
-    //         Auth::guard('user')->LoginUsingId($data1[0]['id']);
-    //     }else{
-    //         return redirect('auth/login')->with(['']);
-    //     }
-    // }
-
     protected function authenticated($request, $user)
     {
-        if($user->id_role == 1) {
-            return redirect()->intended('/admin/santri');
+        if ($user->id_user == 1) {
+            return redirect()->intended('/admin');
         }
-
-        return redirect()->intended('/santri');
+        dd($user);
+        // return redirect()->intended('/santri');
     }
 
-
-
-    public function login(Request $request){
-        $data = User::where('username','=',$request->username)->first();
-        if($data){
-            if(Hash::check($request->password,$data->password)){
+    public function login(Request $request)
+    {
+        $data = User::where('username', '=', $request->username)->first();
+        if ($data) {
+            if (Hash::check($request->password, $data->password)) {
                 Auth::login($data);
                 // dd($data);
-                return redirect('admin/santri');
-    
-            }
+                switch ($data->role->role) {
+                    case 'Admin';
+                        return redirect()->route('admin.index');
+                        break;
+                    case 'Rumah Sakit';
+                        return redirect()->route('rs.index');
+                        break;
+                    case 'Kepolisian';
+                        return redirect()->route('pl.index');
+                        break;
+                }
+                            }
             return redirect()->back()->withErrors('password', 'The Message');
         }
         return redirect()->back()->withErrors('username', 'The Message');
+    }
 
-        
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        return redirect('login');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateJabatanTable extends Migration
+class CreateJenisKecelakaansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateJabatanTable extends Migration
      */
     public function up()
     {
-        Schema::create('jabatan', function (Blueprint $table) {
-            $table->increments('id_jabatan');
-            $table->string('nama_jabatan',60);
-            $table->integer('is_struktural');
+        Schema::create('jenis_kecelakaan', function (Blueprint $table) {
+            $table->increments('id_jenis');
+            $table->String('jenis_kecelakaan', 15);
+            $table->String('keterangan', 150)->nullable();
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -29,6 +28,6 @@ class CreateJabatanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jabatan');
+        Schema::dropIfExists('jenis_kecelakaan');
     }
 }

@@ -1,10 +1,9 @@
 <?php
 
-use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class RolesSeeder extends Seeder
+class JenisKecelakaanSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,20 +12,15 @@ class RolesSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('roles')->insert([
-            'role' => 'Admin',
+        DB::table('jenis_kecelakaan')->insert([
+            'jenis_kecelakaan' => 'Ringan',
+            'keterangan' => '',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);
-
-        DB::table('roles')->insert([
-            'role' => 'Rumah Sakit',
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s')
-        ]);
-
-        DB::table('roles')->insert([
-            'role' => 'Kepolisian',
+        DB::table('jenis_kecelakaan')->insert([
+            'jenis_kecelakaan' => 'Berat',
+            'keterangan' => 'Membikin macet, menelan korban jiwa',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);
